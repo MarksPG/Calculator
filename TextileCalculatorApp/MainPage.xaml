@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="TextileCalculatorApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TextileCalculatorApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <RelativePanel>
+            <Image/>
+            <TextBlock x:Name="TitleTextBlock"
+                       Text="WINTERS PRISKALKYLATOR"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       FontFamily="Avenir LTCom"
+                       FontSize="28"
+                       Margin="20 5 0 0"/>
+            <Button x:Name="SearchButton"
+                    RelativePanel.AlignRightWithPanel="True"
+                    FontFamily="segoe mdl2 assets"
+                    FontSize="36"
+                    Content="&#xE71E;"/>
+
+            <TextBox x:Name="SearchTextBox"
+                     RelativePanel.LeftOf="SearchButton"
+                     Height="48"
+                     Width="200"
+                     FontSize="24"/>
+        </RelativePanel>
+    </Grid>
+</Page>
