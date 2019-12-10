@@ -10,29 +10,131 @@
 
     <Grid>
         <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <RelativePanel>
-            <Image/>
+        <!-- HEADER -->
+        <RelativePanel Grid.Row="0">
+            <Image Source="Images/winters-logo-grey-70-1024x290.png"
+                   Width="211.86"
+                   Height="60"
+                   Margin="10 10 0 0"/>
             <TextBlock x:Name="TitleTextBlock"
-                       Text="WINTERS PRISKALKYLATOR"
+                       Text="PRISKALKYLATOR"
                        RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       RelativePanel.AlignBottomWithPanel="True"
                        FontFamily="Avenir LTCom"
-                       FontSize="28"
+                       FontSize="36"
                        Margin="20 5 0 0"/>
-            <Button x:Name="SearchButton"
+            <!--<Button x:Name="SearchButton"
                     RelativePanel.AlignRightWithPanel="True"
+                    RelativePanel.AlignVerticalCenterWithPanel="True"
                     FontFamily="segoe mdl2 assets"
                     FontSize="36"
                     Content="&#xE71E;"/>
 
             <TextBox x:Name="SearchTextBox"
                      RelativePanel.LeftOf="SearchButton"
+                     RelativePanel.AlignVerticalCenterWithPanel="True"
                      Height="48"
                      Width="200"
-                     FontSize="24"/>
+                     FontSize="24"/>-->
         </RelativePanel>
+        <!-- MAIN -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- QUALITIES -->
+            <StackPanel    Grid.Column="0"
+                           Orientation="Vertical"
+                           Margin="20 0 0 0">
+                <TextBlock Text="TYGKVALITETER"
+                           FontFamily="Arial"
+                           FontSize="24"
+                           HorizontalAlignment="Center"/>
+                <ListBox FontFamily="Arial"
+                         FontSize="24">
+                         
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                    <ListBoxItem>TextileName</ListBoxItem>
+                </ListBox>
+            </StackPanel>
+            <!-- WIDTHS -->
+            <StackPanel    Grid.Column="1"
+                           Orientation="Vertical"
+                           Margin="20 0 0 0"
+                           HorizontalAlignment="Center">
+                <TextBlock Text="BREDDER"
+                           FontFamily="Arial"
+                           FontSize="24"
+                           HorizontalAlignment="Center"/>
+                <ListBox 
+                         FontFamily="Arial"
+                         FontSize="24"
+                         HorizontalContentAlignment="Center">
+
+                
+                    <ListBoxItem HorizontalAlignment="Center">140 cm</ListBoxItem>
+                    <ListBoxItem HorizontalAlignment="Center">260 cm</ListBoxItem>
+
+                </ListBox>
+            </StackPanel>
+            <!-- COLOURS -->
+            <StackPanel    Grid.Column="2"
+                           Orientation="Vertical"
+                           Margin="20 0 0 0">
+                <TextBlock Text="FÄRGER"
+                           FontFamily="Arial"
+                           FontSize="24"
+                           HorizontalAlignment="Center"/>
+                <ListBox 
+                         FontFamily="Arial"
+                         FontSize="24">
+
+                    <ListBoxItem>ColourName</ListBoxItem>
+                    <ListBoxItem>ColourName</ListBoxItem>
+                    <ListBoxItem>ColourName</ListBoxItem>
+                    <ListBoxItem>ColourName</ListBoxItem>
+                    <ListBoxItem>ColourName</ListBoxItem>
+                    <ListBoxItem>ColourName</ListBoxItem>
+                    <ListBoxItem>ColourName</ListBoxItem>
+
+                </ListBox>
+            </StackPanel>
+            <Rectangle Fill="Aqua" Grid.Column="3"/>
+        </Grid>
     </Grid>
 </Page>
