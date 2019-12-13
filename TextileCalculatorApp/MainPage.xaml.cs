@@ -25,6 +25,32 @@ namespace TextileCalculatorApp
         public MainPage()
         {
             this.InitializeComponent();
+            ContentFrame.Navigate(typeof(CalculatePage));
+        }
+
+        private void MenuSelected(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+
+            var item = NavView.SelectedItem as NavigationViewItem;
+            switch (item.Tag)
+            {
+                case "home":
+                    ContentFrame.Navigate(typeof(CalculatePage));
+                    TitleTextBlock.Text = "Kalkylera gardinpris";
+                    break;
+                case "kalkyl":
+                    ContentFrame.Navigate(typeof(CalculatePage));
+                    TitleTextBlock.Text = "Kalkylera gardinpris";
+                    break;
+                case "order":
+                    ContentFrame.Navigate(typeof(OrderPage));
+                    TitleTextBlock.Text = "Totalorder";
+                    break;
+                case "newItems":
+                    ContentFrame.Navigate(typeof(AddItemsPage));
+                    TitleTextBlock.Text = "Lägg till vara";
+                    break;
+            }
         }
     }
 }
