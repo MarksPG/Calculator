@@ -26,5 +26,7 @@ namespace TextileCalculatorApp
         {
             this.InitializeComponent();
         }
+
+        
     }
 }
