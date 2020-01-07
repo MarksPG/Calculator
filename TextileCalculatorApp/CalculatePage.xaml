@@ -39,7 +39,7 @@
             <ListBox    Margin="10 0 10 20"
                         Height="500"
                         Grid.Column="0"
-                        Grid.Row="2"
+                        Grid.Row="1"
                         FontFamily="Arial"
                         FontSize="18">
                 <ListBoxItem>TextileName</ListBoxItem>
@@ -153,7 +153,6 @@
                         Grid.Row="1"
                         HorizontalAlignment="Center">
                     <Image  
-                        
                         VerticalAlignment="Top"
                         Height="200"
                         Width="200"
@@ -176,12 +175,17 @@
                                 Width="70"     
                                 HorizontalAlignment="Center"/>
                 
-                    <!--<TextBlock  Text="Välj upphängning"
+                    <TextBlock  Text="Välj upphängning"
                                 Margin="0 20 10 0"
                                 FontFamily="Arial"
                                 FontSize="18"
                                 HorizontalAlignment="Center"/>
-                    <TextBox    x:Name="hangInput"
+                <ComboBox   x:Name="FontsCombo" 
+                                Height="44" 
+                                Width="296" />
+                <!--DisplayMemberPath="Source"/>
+                ItemsSource="{x:Bind textileSuspension}" -->
+                <!--<TextBox    x:Name="hangInput"
                                 PlaceholderText="choice"
                                 Width="150"     
                                 HorizontalAlignment="Center"/>-->

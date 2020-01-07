@@ -44,7 +44,8 @@
                         ExpandedModeThresholdWidth="100"
                         >
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Home" Content="Hem" Tag="home"/>
+                <NavigationViewItem Icon="Home" Content="Användare" Tag="home"/>
+                
                 <NavigationViewItem Content="Kalkylsida" Tag="kalkyl">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB3C;"/>

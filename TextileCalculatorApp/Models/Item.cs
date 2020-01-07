@@ -4,44 +4,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace TextileCalculatorApp.Models
 {
-    [Table("TextileName")]
+    class ItemRoot
+    {
+        public Item[] Items { get; set; }
+    }
+
+    
     class Item
     {
+        [JsonProperty("itemID")]
         public int ID { get; set; }
 
+        [JsonProperty("itemNumber")]
         public string ItemNumber { get; set; }
 
+        [JsonProperty("description")]
         public string Description { get; set; }
 
-        public int PatternReport { get; set; }
+        [JsonProperty("patternReport")]
+        public int? PatternReport { get; set; }
 
-        public ICollection<Colour> Colours { get; set; }
+        [JsonProperty("colours")]
+        public Colour[] Colours { get; set; }
 
-        public ICollection<Width> Widths { get; set; }
+        [JsonProperty("widths")]
+        public Width[] Widths { get; set; }
+
+        [JsonProperty("pricelist")]
+        public string PriceList { get; set; }
+
+        [JsonProperty("additionalFactor")]
+        public string AdditionalFactor { get; set; }
 
     }
+            
 
-    [Table("Colour")]
-    class Colour
+    public enum TextileSuspension
     {
-        public int ID { get; set; }
-
-        public int ColourCode { get; set; }
-
-        public string ColourName { get; set; }
-
-    }
-
-    [Table("Width")]
-    class Width 
-    { 
-        public int ID { get; set; }
-
-        public int RollWidth { get; set; }
-
-        public double ItemPrice { get; set; }
+        Påsömnadsglid,
+        Wave,
+        Veckband
     }
 }

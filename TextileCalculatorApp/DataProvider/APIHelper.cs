@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App1.DataProvider
+namespace TextileCalculatorApp.DataProvider
 {
     class APIHelper
     {
