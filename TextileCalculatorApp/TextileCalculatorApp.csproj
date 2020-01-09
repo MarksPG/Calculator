@@ -143,7 +143,9 @@
     </Compile>
     <Compile Include="Models\Colour.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\PriceList.cs" />
     <Compile Include="Models\Pricing.cs" />
+    <Compile Include="Models\SewingPrice.cs" />
     <Compile Include="Models\Width.cs" />
     <Compile Include="OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>

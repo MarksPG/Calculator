@@ -11,7 +11,7 @@ namespace TextileCalculatorApp.Models
     class Pricing
     {
         
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         public double RetailerPurchasePrice { get; set; }
 

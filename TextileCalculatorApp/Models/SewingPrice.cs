@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace TextileCalculatorApp.Models
 {
-    
-    class Width
+    public class SewingPrice
     {
         [JsonProperty("id")]
         public int Id { get; set; }
 
-        [JsonProperty("rollWidth")]
-        public int RollWidth { get; set; }
+        [JsonProperty("priceLimitHeight")]
+        public int PriceLimitHeight { get; set; }
 
-        [JsonProperty("itemPrice")]
-        public double ItemPrice { get; set; }
+        [JsonProperty("sewingCost")]
+        public int SewingCost { get; set; }
     }
 }

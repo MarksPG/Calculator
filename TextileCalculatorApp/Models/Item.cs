@@ -18,7 +18,7 @@ namespace TextileCalculatorApp.Models
     class Item
     {
         [JsonProperty("itemID")]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("itemNumber")]
         public string ItemNumber { get; set; }
@@ -36,7 +36,7 @@ namespace TextileCalculatorApp.Models
         public Width[] Widths { get; set; }
 
         [JsonProperty("pricelist")]
-        public string PriceList { get; set; }
+        public Price PriceList { get; set; }
 
         [JsonProperty("additionalFactor")]
         public string AdditionalFactor { get; set; }

@@ -10,7 +10,7 @@ namespace TextileCalculatorApp.Models
     class Colour
     {
         [JsonProperty("id")]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("colourCode")]
         public int ColourCode { get; set; }
