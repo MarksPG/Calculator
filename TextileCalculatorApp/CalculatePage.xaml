@@ -20,7 +20,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <!-- QUALITIES -->
+        <!-- TEXTILES -->
         <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -36,31 +36,16 @@
                         FontSize="18"                        
                         Grid.Row="0"
                         Grid.Column="0"/>
-            <ListBox    Margin="10 0 10 20"
-                        Height="500"
+            <ListBox    x:Name="TextileList"
+                        DisplayMemberPath="Description"
+                        SelectionChanged="TextileChanged"
+                        Margin="10 0 10 20"
+                        Height="Auto"
                         Grid.Column="0"
                         Grid.Row="1"
                         FontFamily="Arial"
                         FontSize="18">
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>TextileName</ListBoxItem>
-                <ListBoxItem>STOP</ListBoxItem>
+                
             </ListBox>
         </Grid>
         
@@ -79,14 +64,17 @@
                            FontSize="18"
                            Grid.Column="1"
                            Grid.Row="0"/>
-            <ListBox     Margin="10 0 10 20"
+            <ListBox    x:Name="WidthList"
+                        DisplayMemberPath="RollWidth"
+                        SelectionChanged="SelectedWidth"
+                        Margin="10 0 10 20"
                          FontFamily="Arial"
                          FontSize="18"
                          Grid.Column="1"
                          Grid.Row="1"
                          Height="Auto">
-                <ListBoxItem>140 cm</ListBoxItem>
-                <ListBoxItem>260 cm</ListBoxItem>
+                <ListBoxItem>STOP</ListBoxItem>
+                
             </ListBox>
         </Grid>
 
@@ -105,28 +93,16 @@
                         FontSize="18"
                         Grid.Column="2"
                         Grid.Row="0"/>
-            <ListBox    Margin="10 0 10 20"
+            <ListBox    x:Name="ColourList"
+                        DisplayMemberPath="ColourName"
+                        SelectionChanged="ShowCurrentColourPicture"
+                        Margin="10 0 10 20"
                         FontFamily="Arial"
                         FontSize="18"
-                        Height="500"
                         Grid.Column="2"
-                        Grid.Row="1">
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
-                <ListBoxItem>ColourName</ListBoxItem>
+                        Grid.Row="1"
+                        Height="Auto">
+                
                 <ListBoxItem>STOP</ListBoxItem>
             </ListBox>
         </Grid>
@@ -156,7 +132,7 @@
                         VerticalAlignment="Top"
                         Height="200"
                         Width="200"
-                        Source="/Images/2850-37.jpg"/>
+                        x:Name="currentPicture"/>
                     <TextBlock  x:Name="OrderingItem"
                                 Text="OrderingItem"
                                 Height="Auto"

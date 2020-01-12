@@ -9,13 +9,12 @@ using Newtonsoft.Json;
 
 namespace TextileCalculatorApp.Models
 {
-    class ItemRoot
-    {
-        public Item[] Items { get; set; }
-    }
+    //class ItemRoot
+    //{
+    //    public Item[] Items { get; set; }
+    //}
 
-    
-    class Item
+    public class Textile
     {
         [JsonProperty("itemID")]
         public int Id { get; set; }
@@ -30,19 +29,23 @@ namespace TextileCalculatorApp.Models
         public int? PatternReport { get; set; }
 
         [JsonProperty("colours")]
-        public Colour[] Colours { get; set; }
+        public List<Colour> Colours { get; set; }
 
         [JsonProperty("widths")]
-        public Width[] Widths { get; set; }
+        public List<Width> Widths { get; set; }
 
-        [JsonProperty("pricelist")]
-        public Price PriceList { get; set; }
+        [JsonProperty("priceList")]
+        public PriceList PriceList { get; set; }
+
+        [JsonProperty("imageString")]
+        public string ImageString { get; set; }
 
         [JsonProperty("additionalFactor")]
-        public string AdditionalFactor { get; set; }
-
+        public int AdditionalFactor { get; set; }
     }
-            
+
+    
+
 
     public enum TextileSuspension
     {
@@ -50,4 +53,6 @@ namespace TextileCalculatorApp.Models
         Wave,
         Veckband
     }
+
+    
 }

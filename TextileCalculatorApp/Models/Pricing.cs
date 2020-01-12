@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TextileCalculatorApp.Models
 {
-    class Pricing
+    public class Pricing
     {
         
         public int Id { get; set; }

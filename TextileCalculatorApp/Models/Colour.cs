@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TextileCalculatorApp.Models
 {
-    class Colour
+    public class Colour
     {
         [JsonProperty("id")]
         public int Id { get; set; }
