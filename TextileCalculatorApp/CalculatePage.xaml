@@ -156,25 +156,65 @@
                                 FontFamily="Arial"
                                 FontSize="18"
                                 HorizontalAlignment="Center"/>
-                <ComboBox   x:Name="FontsCombo" 
+                    <ComboBox   x:Name="SuspensionCombo" 
                                 Height="44" 
                                 Width="296" />
-                <!--DisplayMemberPath="Source"/>
-                ItemsSource="{x:Bind textileSuspension}" -->
-                <!--<TextBox    x:Name="hangInput"
-                                PlaceholderText="choice"
-                                Width="150"     
-                                HorizontalAlignment="Center"/>-->
-                
-                     <TextBlock  Text="Ange antal"
-                                    Margin="0 20 10 0"
-                                    FontFamily="Arial"
-                                    FontSize="18"
-                                    HorizontalAlignment="Center"/>
+                    <TextBlock  Text="Ange antal"
+                                Margin="0 20 10 0"
+                                FontFamily="Arial"
+                                FontSize="18"
+                                HorizontalAlignment="Center"/>
                     <TextBox    x:Name="numberInput"
                                 PlaceholderText="Antal"
                                 Width="70"     
                                 HorizontalAlignment="Center"/>
+                
+                    <Button Name="Calculate"
+                        Height ="Auto"
+                        Width="Auto"
+                        FontSize="14"
+                        FontFamily="Arial"
+                        HorizontalAlignment="Center"
+                        Margin="0 20 0 0"
+                        Click="CalculatePrice">Beräkna pris</Button>
+                <Grid   Margin="0 25 0 0"
+                        HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"
+                               Grid.Row="0"
+                               HorizontalAlignment="Center"
+                               Margin="10 0 10 0"
+                               FontSize="14">Ditt inköpspris</TextBlock>
+                    <TextBlock Grid.Column="1"
+                               Grid.Row="0"
+                               HorizontalAlignment="Center"
+                               Margin="10 0 10 0"
+                               FontSize="14">Kundens pris</TextBlock>
+                    <TextBlock x:Name="RetailPrice"
+                               Grid.Column="0"
+                               Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               Margin="10 0 10 0"
+                               FontWeight="ExtraBold"
+                               FontSize="20"/>
+                    <TextBlock x:Name="CustomerPrice"
+                               Grid.Column="1"
+                               Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               Margin="10 0 10 0"
+                               Foreground="Green"
+                               FontWeight="ExtraBold"
+                               FontSize="20"/>
+
+                </Grid>
+                
             </StackPanel>
         </Grid>
     </Grid>

@@ -99,5 +99,30 @@ namespace TextileCalculatorApp
 
         }
 
+        private void CalculatePrice(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Textile chosenTextile = TextileList.SelectedItem as Textile;
+            Colour chosenColour = ColourList.SelectedItem as Colour;
+            Width chosenWidth = WidthList.SelectedItem as Width;
+
+            CustomerSelectedData csd = new CustomerSelectedData
+            {
+                InputLength = Int32.Parse(lengthInput.Text),
+                InputNumber = Int32.Parse(numberInput.Text),
+                SelectedSuspension = SuspensionCombo.Text,
+                SelectedTextileId = chosenTextile.Id,
+                SelectedColourId = chosenColour.Id,
+                SelectedWidthId = chosenWidth.Id
+
+            };
+
+            TextileDataProvider tdp = new TextileDataProvider();
+
+            tdp.SendDataForCalculation(csd);
+            
+            RetailPrice.Text = "1400 kr";
+            CustomerPrice.Text = "3200 kr";
+           
+        }
     }
 }

@@ -29,6 +29,11 @@ namespace TextileCalculatorApp.DataProvider
             return textiles;
         }
 
+        public void SendDataForCalculation(CustomerSelectedData csd)
+        {
+
+        }
+
         public string GetPictureURL(Textile chosenTextile, Colour chosenColour)
         {
             string baseUrl = "https://www.winterstextil.se/wp-content/uploads/";
