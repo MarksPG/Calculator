@@ -135,6 +135,8 @@
     </Compile>
     <Compile Include="DataProvider\APIHelper.cs" />
     <Compile Include="DataProvider\TextileDataProvider.cs" />
+    <Compile Include="DTO\CalculatedPrice.cs" />
+    <Compile Include="DTO\CustomerSelectedData.cs" />
     <Compile Include="LoginRegisterPage.xaml.cs">
       <DependentUpon>LoginRegisterPage.xaml</DependentUpon>
     </Compile>
@@ -142,10 +144,8 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Colour.cs" />
-    <Compile Include="Models\CustomerSelectedData.cs" />
     <Compile Include="Models\Textile.cs" />
     <Compile Include="Models\PriceList.cs" />
-    <Compile Include="Models\Pricing.cs" />
     <Compile Include="Models\SewingPrice.cs" />
     <Compile Include="Models\Width.cs" />
     <Compile Include="OrderPage.xaml.cs">
@@ -201,6 +201,9 @@
   <ItemGroup>
     <PackageReference Include="EntityFramework">
       <Version>6.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client">
+      <Version>5.2.7</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>

@@ -9,11 +9,6 @@ using Newtonsoft.Json;
 
 namespace TextileCalculatorApp.Models
 {
-    //class ItemRoot
-    //{
-    //    public Item[] Items { get; set; }
-    //}
-
     public class Textile
     {
         [JsonProperty("itemID")]

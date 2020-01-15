@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Controls;
 using System;
 using Windows.UI.Xaml.Media.Imaging;
+using System.Threading.Tasks;
 
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -26,7 +27,7 @@ namespace TextileCalculatorApp
             
             foreach (TextileSuspension value in Enum.GetValues(typeof(TextileSuspension)))
             {
-                FontsCombo.Items.Add(value);
+                SuspensionCombo.Items.Add(value);
             }
         }
 
@@ -75,16 +76,15 @@ namespace TextileCalculatorApp
         {
             Textile chosenTextile = TextileList.SelectedItem as Textile;
 
-            
+
         }
-    
+
 
         private void ShowCurrentColourPicture(object sender, SelectionChangedEventArgs e)
         {
             Textile chosenTextile = TextileList.SelectedItem as Textile;
-            Colour chosenColour = ColourList.SelectedItem as Colour;
 
-            if (chosenColour != null)
+            if (ColourList.SelectedItem is Colour chosenColour)
             {
                 TextileDataProvider tdp = new TextileDataProvider();
 
@@ -95,7 +95,7 @@ namespace TextileCalculatorApp
                 };
                 currentPicture.Source = bitmapImage;
             }
-            
+
 
         }
 
@@ -105,11 +105,11 @@ namespace TextileCalculatorApp
             Colour chosenColour = ColourList.SelectedItem as Colour;
             Width chosenWidth = WidthList.SelectedItem as Width;
 
-            CustomerSelectedData csd = new CustomerSelectedData
+            DTO.CustomerSelectedData csd = new DTO.CustomerSelectedData
             {
                 InputLength = Int32.Parse(lengthInput.Text),
                 InputNumber = Int32.Parse(numberInput.Text),
-                SelectedSuspension = SuspensionCombo.Text,
+                SelectedSuspension = SuspensionCombo.SelectedValue.ToString(),
                 SelectedTextileId = chosenTextile.Id,
                 SelectedColourId = chosenColour.Id,
                 SelectedWidthId = chosenWidth.Id
@@ -118,10 +118,14 @@ namespace TextileCalculatorApp
 
             TextileDataProvider tdp = new TextileDataProvider();
 
-            tdp.SendDataForCalculation(csd);
+            Task<DTO.CalculatedPrice> data = Task.Run<DTO.CalculatedPrice>(async () => await tdp.SendDataForCalculationAsync(csd));
+            var output = data.Result;
+            //RetailPrice.Text = data.RetailerCost.ToString();
+
+            CustomerPrice.Text = output.CustomerPrice.ToString() + "kr";
+
+            RetailPrice.Text = output.RetailerCost.ToString() + "kr";
             
-            RetailPrice.Text = "1400 kr";
-            CustomerPrice.Text = "3200 kr";
            
         }
     }

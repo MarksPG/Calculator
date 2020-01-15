@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Text;
 using System.Threading.Tasks;
 using TextileCalculatorApp.Models;
@@ -29,9 +30,22 @@ namespace TextileCalculatorApp.DataProvider
             return textiles;
         }
 
-        public void SendDataForCalculation(CustomerSelectedData csd)
+        public async Task<DTO.CalculatedPrice> SendDataForCalculationAsync(DTO.CustomerSelectedData csd)
         {
+            string URL = "http://localhost:5000/api/WinterItems/CalcData";
+            DTO.CalculatedPrice prices = new DTO.CalculatedPrice();
+            //var myData = JsonConvert.SerializeObject(csd);
 
+            using (HttpResponseMessage response = await APIHelper.ApiClient.PostAsync(URL, csd, new JsonMediaTypeFormatter()))
+            {
+                var result = response.Content.ReadAsStringAsync();
+                var data = JsonConvert.DeserializeObject<DTO.CalculatedPrice>(result.Result);
+
+                prices = data;
+            }
+            return prices;
+
+            
         }
 
         public string GetPictureURL(Textile chosenTextile, Colour chosenColour)
