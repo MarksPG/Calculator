@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
@@ -19,7 +19,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <!-- TEXTILES -->
         <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
@@ -37,6 +37,7 @@
                         Grid.Row="0"
                         Grid.Column="0"/>
             <ListBox    x:Name="TextileList"
+                        Background="White"
                         DisplayMemberPath="Description"
                         SelectionChanged="TextileChanged"
                         Margin="10 0 10 20"
@@ -45,10 +46,10 @@
                         Grid.Row="1"
                         FontFamily="Arial"
                         FontSize="18">
-                
+
             </ListBox>
         </Grid>
-        
+
         <!--WIDTHS -->
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -65,6 +66,7 @@
                            Grid.Column="1"
                            Grid.Row="0"/>
             <ListBox    x:Name="WidthList"
+                        Background="White"
                         DisplayMemberPath="RollWidth"
                         SelectionChanged="SelectedWidth"
                         Margin="10 0 10 20"
@@ -73,8 +75,8 @@
                          Grid.Column="1"
                          Grid.Row="1"
                          Height="Auto">
-                <ListBoxItem>STOP</ListBoxItem>
-                
+
+
             </ListBox>
         </Grid>
 
@@ -84,8 +86,9 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="750"></RowDefinition>
+
             </Grid.RowDefinitions>
             <TextBlock  Text="FÄRGER"
                         Margin="10 10 10 10"
@@ -94,16 +97,17 @@
                         Grid.Column="2"
                         Grid.Row="0"/>
             <ListBox    x:Name="ColourList"
+                        Background="White"
                         DisplayMemberPath="ColourName"
                         SelectionChanged="ShowCurrentColourPicture"
                         Margin="10 0 10 20"
                         FontFamily="Arial"
                         FontSize="18"
                         Grid.Column="2"
-                        Grid.Row="1"
-                        Height="Auto">
-                
-                <ListBoxItem>STOP</ListBoxItem>
+                        Grid.Row="1">
+
+
+
             </ListBox>
         </Grid>
 
@@ -111,111 +115,131 @@
         <Grid Grid.Column="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-        
+
             <TextBlock  Text="BESTÄLLNINGSVARA"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="0"
+                        Grid.Row="0"
                         Margin="10 10 10 10"
                         FontFamily="Arial"
                         FontSize="18"
-                        Grid.Column="3"
-                        Grid.Row="0"
                         HorizontalAlignment="Center"/>
-            <StackPanel Orientation="Vertical"
-                        Grid.Column="3"
+            <Image      x:Name="currentPicture"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="0"
                         Grid.Row="1"
-                        HorizontalAlignment="Center">
-                    <Image  
-                        VerticalAlignment="Top"
                         Height="200"
                         Width="200"
-                        x:Name="currentPicture"/>
-                    <TextBlock  x:Name="OrderingItem"
-                                Text="OrderingItem"
-                                Height="Auto"
-                                Margin="0 10 10 0"
-                                FontFamily="Arial"
-                                FontSize="18"
-                                HorizontalAlignment="Center"/>
-                
-                    <TextBlock  Text="Ange gardinlängd"
-                                Margin="0 30 0 0"
-                                FontFamily="Arial"
-                                FontSize="18"
-                                HorizontalAlignment="Center"/>
-                    <TextBox    x:Name="lengthInput"
-                                PlaceholderText="cm"
-                                Width="70"     
-                                HorizontalAlignment="Center"/>
-                
-                    <TextBlock  Text="Välj upphängning"
-                                Margin="0 20 10 0"
-                                FontFamily="Arial"
-                                FontSize="18"
-                                HorizontalAlignment="Center"/>
-                    <ComboBox   x:Name="SuspensionCombo" 
-                                Height="44" 
-                                Width="296" />
-                    <TextBlock  Text="Ange antal"
-                                Margin="0 20 10 0"
-                                FontFamily="Arial"
-                                FontSize="18"
-                                HorizontalAlignment="Center"/>
-                    <TextBox    x:Name="numberInput"
-                                PlaceholderText="Antal"
-                                Width="70"     
-                                HorizontalAlignment="Center"/>
-                
-                    <Button Name="Calculate"
+                        Margin="10 10 10 10"
+                        HorizontalAlignment="Center"/>
+            <TextBlock  Text="Ange gardinlängd"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Margin="0 10"
+                        FontFamily="Arial"
+                        FontSize="18"
+                        HorizontalAlignment="Center"/>
+            <TextBox    x:Name="lengthInput"
+                        PlaceholderText="cm"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        Width="75"     
+                        HorizontalAlignment="Center"/>
+            <TextBlock  Text="Välj upphängning"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Margin="0 10"
+                        FontFamily="Arial"
+                        FontSize="18"
+                        HorizontalAlignment="Center"/>
+            <ComboBox   x:Name="SuspensionCombo"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="0"
+                        Grid.Row="5"
+                        Height="44" 
+                        Width="275"
+                        HorizontalAlignment="Center"/>
+            <TextBlock  Text="Ange antal"
+                        Grid.Column="0"
+                        Grid.Row="6"
+                        Margin="0 10"
+                        FontFamily="Arial"
+                        FontSize="18"
+                        HorizontalAlignment="Center"/>
+            <TextBox    x:Name="numberInput"
+                        PlaceholderText="Antal"
+                        Grid.Column="0"
+                        Grid.Row="7"
+                        Width="70"     
+                        HorizontalAlignment="Center"/>
+            <TextBlock  Text="Ange påslag"
+                        Grid.Column="1"
+                        Grid.Row="6"
+                        Margin="0 10"
+                        FontFamily="Arial"
+                        FontSize="18"
+                        HorizontalAlignment="Center"/>
+            <TextBox    x:Name="factorInput"
+                        PlaceholderText="2.4"
+                        Grid.Column="1"
+                        Grid.Row="7"
+                        Width="70"     
+                        HorizontalAlignment="Center"/>
+            <Button     Name="Calculate"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="0"
+                        Grid.Row="8"
+                        Margin="0 10"
                         Height ="Auto"
                         Width="Auto"
-                        FontSize="14"
+                        FontSize="18"
                         FontFamily="Arial"
                         HorizontalAlignment="Center"
-                        Margin="0 20 0 0"
                         Click="CalculatePrice">Beräkna pris</Button>
-                <Grid   Margin="0 25 0 0"
-                        HorizontalAlignment="Center">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0"
-                               Grid.Row="0"
-                               HorizontalAlignment="Center"
-                               Margin="10 0 10 0"
-                               FontSize="14">Ditt inköpspris</TextBlock>
-                    <TextBlock Grid.Column="1"
-                               Grid.Row="0"
-                               HorizontalAlignment="Center"
-                               Margin="10 0 10 0"
-                               FontSize="14">Kundens pris</TextBlock>
-                    <TextBlock x:Name="RetailPrice"
-                               Grid.Column="0"
-                               Grid.Row="1"
-                               HorizontalAlignment="Center"
-                               Margin="10 0 10 0"
-                               FontWeight="ExtraBold"
-                               FontSize="20"/>
-                    <TextBlock x:Name="CustomerPrice"
-                               Grid.Column="1"
-                               Grid.Row="1"
-                               HorizontalAlignment="Center"
-                               Margin="10 0 10 0"
-                               Foreground="Green"
-                               FontWeight="ExtraBold"
-                               FontSize="20"/>
-
-                </Grid>
-                
-            </StackPanel>
+            <TextBlock  Grid.Column="0"
+                        Grid.Row="9"
+                        HorizontalAlignment="Center"
+                        FontFamily="Arial"
+                        Margin="0 10"
+                        FontSize="18">Ditt inköpspris</TextBlock>
+            <TextBlock  x:Name="RetailPrice"
+                        Grid.Column="0"
+                        Grid.Row="10"
+                        HorizontalAlignment="Center"
+                        FontWeight="ExtraBold"
+                        FontSize="20"/>
+            <TextBlock  Grid.Column="1"
+                        Grid.Row="9"
+                        Margin="0 10"
+                        HorizontalAlignment="Center"
+                        FontFamily="Arial"
+                        FontSize="18">Kundens pris</TextBlock>
+            <TextBlock x:Name="CustomerPrice"
+                        Grid.Column="1"
+                        Grid.Row="10"
+                        HorizontalAlignment="Center"
+                        Margin="10 0 10 0"
+                        Foreground="Green"
+                        FontWeight="ExtraBold"
+                        FontSize="20"/>
         </Grid>
     </Grid>
 </Page>

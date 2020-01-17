@@ -25,7 +25,7 @@ namespace TextileCalculatorApp
         public MainPage()
         {
             this.InitializeComponent();
-            ContentFrame.Navigate(typeof(CalculatePage));
+            ContentFrame.Navigate(typeof(LoginRegisterPage));
         }
 
         private void MenuSelected(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
@@ -35,8 +35,8 @@ namespace TextileCalculatorApp
             switch (item.Tag)
             {
                 case "home":
-                    ContentFrame.Navigate(typeof(CalculatePage));
-                    TitleTextBlock.Text = "Kalkylera gardinpris";
+                    ContentFrame.Navigate(typeof(LoginRegisterPage));
+                    TitleTextBlock.Text = "Start & Inloggning";
                     break;
                 case "kalkyl":
                     ContentFrame.Navigate(typeof(CalculatePage));

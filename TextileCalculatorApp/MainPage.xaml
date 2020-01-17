@@ -15,8 +15,9 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         
         <!-- HEADER -->
@@ -34,6 +35,10 @@
                        FontSize="36"
                        Margin="20 5 0 0"/>
         </RelativePanel>
+        <TextBlock Grid.Row="2"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 10 0"
+                   FontSize="10">Version 1.0.0</TextBlock>
         
         <NavigationView x:Name="NavView"
                         Grid.Row="1"
@@ -41,10 +46,11 @@
                         IsSettingsVisible="False"
                         IsPaneOpen="False"
                         SelectionChanged="MenuSelected"
-                        ExpandedModeThresholdWidth="100"
-                        >
+                        ExpandedModeThresholdWidth="50"
+                        OpenPaneLength="175">
+                                                
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Home" Content="Användare" Tag="home"/>
+                <NavigationViewItem Icon="Home" Content="Start/Inloggning" Tag="home"/>
                 
                 <NavigationViewItem Content="Kalkylsida" Tag="kalkyl">
                     <NavigationViewItem.Icon>

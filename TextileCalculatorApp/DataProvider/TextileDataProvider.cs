@@ -34,7 +34,6 @@ namespace TextileCalculatorApp.DataProvider
         {
             string URL = "http://localhost:5000/api/WinterItems/CalcData";
             DTO.CalculatedPrice prices = new DTO.CalculatedPrice();
-            //var myData = JsonConvert.SerializeObject(csd);
 
             using (HttpResponseMessage response = await APIHelper.ApiClient.PostAsync(URL, csd, new JsonMediaTypeFormatter()))
             {
@@ -43,6 +42,10 @@ namespace TextileCalculatorApp.DataProvider
 
                 prices = data;
             }
+
+
+
+
             return prices;
 
             
