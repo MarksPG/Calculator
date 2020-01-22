@@ -133,25 +133,36 @@
     <Compile Include="CalculatePage.xaml.cs">
       <DependentUpon>CalculatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\InputDataView.xaml.cs">
+      <DependentUpon>InputDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OrderData.xaml.cs">
+      <DependentUpon>OrderData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataProvider\APIHelper.cs" />
     <Compile Include="DataProvider\TextileDataProvider.cs" />
     <Compile Include="DTO\CalculatedPrice.cs" />
     <Compile Include="DTO\CustomerSelectedData.cs" />
+    <Compile Include="DTO\OrderFromDB.cs" />
     <Compile Include="LoginRegisterPage.xaml.cs">
       <DependentUpon>LoginRegisterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Colour.cs" />
-    <Compile Include="Models\Textile.cs" />
-    <Compile Include="Models\PriceList.cs" />
-    <Compile Include="Models\SewingPrice.cs" />
-    <Compile Include="Models\Width.cs" />
+    <Compile Include="Model\Colour.cs" />
+    <Compile Include="Model\InputDataModel.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\Textile.cs" />
+    <Compile Include="Model\PriceList.cs" />
+    <Compile Include="Model\SewingPrice.cs" />
+    <Compile Include="Model\UserInput.cs" />
+    <Compile Include="Model\Width.cs" />
     <Compile Include="OrderPage.xaml.cs">
       <DependentUpon>OrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\InputDataViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -159,7 +170,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\2850-37.jpg" />
     <Content Include="Images\winters-logo-grey-70-1024x290.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -182,6 +192,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CalculatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InputDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OrderData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

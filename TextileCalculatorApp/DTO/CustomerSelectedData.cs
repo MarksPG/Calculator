@@ -26,5 +26,8 @@ namespace TextileCalculatorApp.DTO
 
         [JsonProperty("selectedWidthId")]
         public int SelectedWidthId { get; set; }
+
+        [JsonProperty("inputFactor")]
+        public double InputFactor { get; set; }
     }
 }

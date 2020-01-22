@@ -43,19 +43,35 @@ namespace TextileCalculatorApp.DataProvider
                 prices = data;
             }
 
-
-
-
             return prices;
-
-            
+                        
         }
+
+        public async Task<List<Order>> GetOrders()
+        {
+            string URL = "http://localhost:5000/api/WinterItems/Orders";
+            List<Order> orders = new List<Order>();
+
+            using (HttpResponseMessage response = await APIHelper.ApiClient.GetAsync(URL))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = response.Content.ReadAsStringAsync();
+                    var data = JsonConvert.DeserializeObject<List<Order>>(result.Result);
+
+                    orders = data;
+                }
+            }
+            return orders;
+        }
+
+
 
         public string GetPictureURL(Textile chosenTextile, Colour chosenColour)
         {
             string baseUrl = "https://www.winterstextil.se/wp-content/uploads/";
             string textileUrl = chosenTextile.ImageString;
-            string selectedUrl = $"{chosenTextile.ItemNumber}-{chosenColour.ColourCode.ToString()}.jpg";
+            string selectedUrl = $"{chosenTextile.ItemNumber}-{chosenColour.ColourCode}.jpg";
 
 
             // https://www.winterstextil.se/wp-content/uploads/2019/06/03246-50.jpg
