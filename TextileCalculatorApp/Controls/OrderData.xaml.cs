@@ -10,7 +10,7 @@ namespace TextileCalculatorApp.Controls
         public OrderData()
         {
             this.InitializeComponent();
-            APIHelper.InitializeClient();
+            //APIHelper.InitializeClient();
             //GetAllTextiles();
         }
 

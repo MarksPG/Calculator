@@ -1,4 +1,5 @@
 ﻿<UserControl
+    x:Name="InputDataViewControl"
     x:Class="TextileCalculatorApp.Views.InputDataView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,8 +9,9 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
+    <!--Loaded="{x:Bind InputDataViewModel.LoadDefaultInput}">-->
 
-    <ItemsControl ItemsSource = "{Binding Path = InputDataCollection}">
+    <ItemsControl ItemsSource = "{x:Bind InputDataViewModel.InputDataCollection}">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
         <Grid>
@@ -52,15 +54,18 @@
                         FontSize="18"
                         HorizontalAlignment="Center"/>
                     <ComboBox  
-                               ItemsSource="{Binding CmbContent}"
                         Text="{Binding Path = SelectedSuspension, Mode=OneWay}"  
                         Grid.ColumnSpan="2"
                         Grid.Column="0"
                         Grid.Row="3"
                         Height="44" 
                         Width="275" Margin="0 10 0 10"
-                        HorizontalAlignment="Center"/>
-            <TextBlock  x:Name="Tralala"    
+                        HorizontalAlignment="Center">
+                        <ComboBoxItem Content="Wave"/>
+                        <ComboBoxItem Content="Påsömnadsglid"/>
+                        <ComboBoxItem Content="Veckband"/>
+                    </ComboBox>
+                    <TextBlock  x:Name="Tralala"    
                         Text="Ange antal"
                         Grid.Column="0"
                         Grid.Row="4"
@@ -74,7 +79,7 @@
                         Grid.Row="5"
                         Width="70" Margin="0 10 0 10"      
                         HorizontalAlignment="Center"/>
-            <TextBlock      Text="Ange påslag"
+                    <TextBlock      Text="Ange påslag"
                         Grid.Column="1"
                         Grid.Row="4"
                         Margin="0 10 0 10"

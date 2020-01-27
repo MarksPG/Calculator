@@ -12,13 +12,15 @@ namespace TextileCalculatorApp.DataProvider
 {
     class TextileDataProvider
     {
+        
         public async Task<List<Textile>> GetTextiles()
         {
             string URL = "http://localhost:5000/api/WinterItems/Textiles";
             List<Textile> textiles = new List<Textile>();
-            
+
             using (HttpResponseMessage response = await APIHelper.ApiClient.GetAsync(URL))
             {
+                
                 if (response.IsSuccessStatusCode)
                 {
                     var result = response.Content.ReadAsStringAsync();
@@ -27,6 +29,17 @@ namespace TextileCalculatorApp.DataProvider
                     textiles = data;
                 }
             }
+
+            //HttpResponseMessage response = APIHelper.ApiClient.GetAsync(URL).Result;
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    var result = response.Content.ReadAsStringAsync();
+            //    var data = JsonConvert.DeserializeObject<List<Textile>>(result.Result);
+
+            //    textiles = data;
+            //}
+            //response.Dispose();
+
             return textiles;
         }
 

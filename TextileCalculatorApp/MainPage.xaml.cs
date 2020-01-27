@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TextileCalculatorApp.DataProvider;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +27,7 @@ namespace TextileCalculatorApp
         public MainPage()
         {
             this.InitializeComponent();
+            APIHelper.InitializeClient();
             ContentFrame.Navigate(typeof(LoginRegisterPage));
         }
 

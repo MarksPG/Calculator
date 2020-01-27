@@ -42,12 +42,12 @@ namespace TextileCalculatorApp.Models
     
 
 
-    public enum TextileSuspension
-    {
-        Påsömnadsglid,
-        Wave,
-        Veckband
-    }
+    //public enum TextileSuspension
+    //{
+    //    Påsömnadsglid,
+    //    Wave,
+    //    Veckband
+    //}
 
     
 }

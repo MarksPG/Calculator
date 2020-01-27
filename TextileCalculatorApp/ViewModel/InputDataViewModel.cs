@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TextileCalculatorApp.Model;
+﻿using TextileCalculatorApp.Model;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace TextileCalculatorApp.ViewModel
 {
-    public class InputDataViewModel
+    public class InputDataViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<InputData> InputDataCollection { get; set; }
+        public ObservableCollection<InputData> InputDataCollection;
 
-        public ObservableCollection<string> CmbContent { get; set; }
-
-
-
+        public InputDataViewModel()
+        {
+            LoadDefaultInput();
+        }
 
         public void LoadDefaultInput()
         {
@@ -25,18 +21,18 @@ namespace TextileCalculatorApp.ViewModel
             };
 
             InputDataCollection = inputDataCollection;
-
-            ObservableCollection<string> cmbContent = new ObservableCollection<string>
-            {
-                "Wave",
-                "Veckband",
-                "Påsömnadsglid"
-            };
-            CmbContent = cmbContent;
-
-
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 
-
 }
+
+
+    
+
+
+
+
+
+
