@@ -9,13 +9,23 @@ namespace TextileCalculatorApp.ViewModel
 {
     public class TextileSelectionViewModel : INotifyPropertyChanged
     {
+        //public static TextileSelectionViewModel Instance { get; private set; }
+
+        //public TextilePictureViewModel TextilePictureViewModel { get; set; }
+
         public TextileSelectionViewModel()
         {
             APIHelper.InitializeClient();
             LoadTextilesFromDatabase();
             Widths = new ObservableCollection<Width>();
             Colours = new ObservableCollection<Colour>();
+            
             PopulateWidthAndColour(TextileDataCollection[SelectedTextileIndex]);
+            //SelectedWidthIndex = 0;
+            //SelectedColourIndex = 0;
+
+            //Instance = this;
+            //TextilePictureViewModel = new TextilePictureViewModel();
         }
 
 
@@ -173,6 +183,7 @@ namespace TextileCalculatorApp.ViewModel
                 if (_selectedColourIndex != value)
                 {
                     _selectedColourIndex = value;
+                    //TextilePictureViewModel.ShowCurrentColourPicture(SelectedTextileIndex, value);
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedColourIndex)));
                 }
             }
@@ -187,13 +198,15 @@ namespace TextileCalculatorApp.ViewModel
             {
                 Widths.Add(width);
             }
-            SelectedWidthIndex = 0;
+            //SelectedWidthIndex = 0;
 
             foreach (var colour in selectedTextile.Colours)
             {
                 Colours.Add(colour);
             }
-            SelectedColourIndex = 0;
+            //SelectedColourIndex = 0;
+
+
         }
 
         

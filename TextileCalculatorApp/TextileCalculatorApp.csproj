@@ -133,16 +133,14 @@
     <Compile Include="CalculatePage.xaml.cs">
       <DependentUpon>CalculatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\ImageSourceConverter.cs" />
+    <Compile Include="Model\PictureDataModel.cs" />
     <Compile Include="Model\TextileDataModel.cs" />
     <Compile Include="ViewModel\CalculateViewModel.cs" />
-    <Compile Include="ViewModel\ColourViewModel.cs" />
+    <Compile Include="ViewModel\TextilePictureViewModel.cs" />
     <Compile Include="ViewModel\TextileSelectionViewModel.cs" />
-    <Compile Include="ViewModel\WidthViewModel.cs" />
     <Compile Include="Views\InputDataView.xaml.cs">
       <DependentUpon>InputDataView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\OrderData.xaml.cs">
-      <DependentUpon>OrderData.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataProvider\APIHelper.cs" />
     <Compile Include="DataProvider\TextileDataProvider.cs" />
@@ -167,8 +165,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\InputDataViewModel.cs" />
-    <Compile Include="Views\TextileView.xaml.cs">
-      <DependentUpon>TextileView.xaml</DependentUpon>
+    <Compile Include="Views\OrderDataControl.xaml.cs">
+      <DependentUpon>OrderDataControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PictureDataView.xaml.cs">
+      <DependentUpon>PictureDataView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TextileDataView.xaml.cs">
       <DependentUpon>TextileDataView.xaml</DependentUpon>
@@ -205,11 +206,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\InputDataView.xaml">
+    <Page Include="Resources\Style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\OrderData.xaml">
+    <Page Include="Views\InputDataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,7 +226,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TextileView.xaml">
+    <Page Include="Views\OrderDataControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PictureDataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -248,7 +253,6 @@
       <Version>12.0.3</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

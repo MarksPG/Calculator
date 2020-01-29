@@ -1,0 +1,53 @@
+﻿<UserControl
+    x:Class="TextileCalculatorApp.Views.OrderDataControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TextileCalculatorApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <Style x:Key="LocalTextBox" TargetType="TextBox" BasedOn="{StaticResource CoolTextBox}">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+    </UserControl.Resources>
+
+    <!--<ItemsControl Name="orderItemsControl">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <ItemsWrapGrid Orientation="Vertical"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>-->
+    <!--ORDER LINE-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Style="{StaticResource }" Grid.Column="0">ItemNr</TextBlock>
+        <TextBlock Grid.Column="1">Description</TextBlock>
+        <TextBlock Grid.Column="2">ColourName</TextBlock>
+        <TextBlock Grid.Column="3">Width</TextBlock>
+        <TextBlock Grid.Column="4">Suspension</TextBlock>
+        <TextBlock Grid.Column="5">Quantity</TextBlock>
+        <TextBlock Grid.Column="6">RetailerPrice</TextBlock>
+        <TextBlock Grid.Column="7">IsOrder</TextBlock>
+    </Grid>
+    <!--</DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>-->
+</UserControl>

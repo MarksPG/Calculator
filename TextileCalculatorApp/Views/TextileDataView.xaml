@@ -44,7 +44,7 @@
                         Grid.Row="1"
                         FontFamily="Arial"
                         FontSize="18"
-                        
+                        SelectedItem="{x:Bind TextileSelectionViewModel.SelectedTextile, Mode=TwoWay}"
                         ItemsSource="{x:Bind TextileSelectionViewModel.TextileDataCollection}"
                         SelectedIndex="{x:Bind TextileSelectionViewModel.SelectedTextileIndex, Mode=TwoWay}">
                 <ListBox.ItemTemplate>
@@ -72,6 +72,7 @@
                         FontFamily="Arial"
                         FontSize="18"
                         ItemsSource="{x:Bind TextileSelectionViewModel.Widths}"
+                        SelectedItem="{x:Bind TextileSelectionViewModel.SelectedWidth, Mode=OneWay}"
                         SelectedIndex="{x:Bind TextileSelectionViewModel.SelectedWidthIndex, Mode=TwoWay}"
                         Grid.Row="1"
                         Height="Auto">
@@ -99,6 +100,7 @@
                         FontFamily="Arial"
                         FontSize="18"
                         Grid.Row="1"
+                        SelectedItem="{x:Bind TextileSelectionViewModel.SelectedTextile, Mode=OneWay}"
                         ItemsSource="{x:Bind TextileSelectionViewModel.Colours}"
                         SelectedIndex="{x:Bind TextileSelectionViewModel.SelectedColourIndex, Mode=TwoWay}">
                 <ListBox.ItemTemplate>

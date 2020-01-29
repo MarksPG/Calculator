@@ -8,10 +8,13 @@ namespace TextileCalculatorApp.Views
     {
         public TextileSelectionViewModel TextileSelectionViewModel { get; set; }
 
+        
+
         public TextileDataView()
         {
             this.InitializeComponent();
             TextileSelectionViewModel = new TextileSelectionViewModel();
+            
         }
 
         

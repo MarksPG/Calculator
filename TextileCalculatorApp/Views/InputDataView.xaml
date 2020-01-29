@@ -9,33 +9,35 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
-    <!--Loaded="{x:Bind InputDataViewModel.LoadDefaultInput}">-->
+
 
     <ItemsControl ItemsSource = "{x:Bind InputDataViewModel.InputDataCollection}">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBlock  Text="Ange gardinlängd (cm)"
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock  
+                        Text="Ange gardinlängd (cm)"
+                        Style="{StaticResource InputDataTextBlock}"
                         Grid.ColumnSpan="2"
                         Grid.Column="0"
-                        Grid.Row="0"
-                        Margin="0 10 0 10"
+                        Grid.Row="0"/>
+                        <!--Margin="0 10 0 10"
                         FontFamily="Arial"
                         FontSize="18"
-                        HorizontalAlignment="Center"/>
-            <TextBox    Text="{Binding Path = InputLength, Mode=OneWay}"  
+                        HorizontalAlignment="Center"-->
+                    <TextBox    Text="{Binding Path = InputLength, Mode=OneWay}"  
                         TextAlignment="Center"
                         PlaceholderText="240"
                         Grid.ColumnSpan="2"
@@ -44,8 +46,8 @@
                         Width="75"     
                         HorizontalAlignment="Center" 
                         Margin="0 10 0 10">
-            </TextBox>
-            <TextBlock  Text="Välj upphängning"
+                    </TextBox>
+                    <TextBlock  Text="Välj upphängning"
                         Grid.ColumnSpan="2"
                         Grid.Column="0"
                         Grid.Row="2"
@@ -65,7 +67,7 @@
                         <ComboBoxItem Content="Påsömnadsglid"/>
                         <ComboBoxItem Content="Veckband"/>
                     </ComboBox>
-                    <TextBlock  x:Name="Tralala"    
+                    <TextBlock     
                         Text="Ange antal"
                         Grid.Column="0"
                         Grid.Row="4"
@@ -73,7 +75,7 @@
                         FontFamily="Arial"
                         FontSize="18"
                         HorizontalAlignment="Center"/>
-            <TextBox    Text="{Binding Path = InputNumber, Mode=OneWay}"  
+                    <TextBox    Text="{Binding Path = InputNumber, Mode=OneWay}"  
                         TextAlignment="Center"
                         PlaceholderText="1"
                         Grid.Row="5"
@@ -93,7 +95,7 @@
                         Grid.Row="5"
                         Width="70" Margin="0 10 0 10"      
                         HorizontalAlignment="Center"/>
-        </Grid>
+                </Grid>
             </DataTemplate>
         </ItemsControl.ItemTemplate>
     </ItemsControl>

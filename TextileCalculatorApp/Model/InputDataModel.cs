@@ -16,23 +16,23 @@ namespace TextileCalculatorApp.Model
 
     public class InputData : INotifyPropertyChanged
     {
-        private string inputLength;
+        private string _inputLength;
 
-        private string inputNumber;
+        private string _inputNumber;
 
-        private string selectedSuspension;
+        private string _selectedSuspension;
 
-        private string inputFactor;
+        private string _inputFactor;
 
         public string InputLength
         {
-            get { return inputLength; }
+            get { return _inputLength; }
             
             set
             {
-                if (inputLength != value)
+                if (_inputLength != value)
                 {
-                    inputLength = value;
+                    _inputLength = value;
                     RaisePropertyChanged("InputLength");
                 }
             }
@@ -40,13 +40,13 @@ namespace TextileCalculatorApp.Model
 
         public string InputNumber
         {
-            get { return inputNumber; }
+            get { return _inputNumber; }
 
             set
             {
-                if (inputNumber != value)
+                if (_inputNumber != value)
                 {
-                    inputNumber = value;
+                    _inputNumber = value;
                     RaisePropertyChanged("InputNumber");
                 }
             }
@@ -54,13 +54,13 @@ namespace TextileCalculatorApp.Model
 
         public string SelectedSuspension
         {
-            get { return selectedSuspension; }
+            get { return _selectedSuspension; }
 
             set
             {
-                if (selectedSuspension != value)
+                if (_selectedSuspension != value)
                 {
-                    selectedSuspension = value;
+                    _selectedSuspension = value;
                     RaisePropertyChanged("SelectedSuspension");
                 }
             }
@@ -68,13 +68,13 @@ namespace TextileCalculatorApp.Model
 
         public string InputFactor
         {
-            get { return inputFactor; }
+            get { return _inputFactor; }
 
             set
             {
-                if (inputFactor != value)
+                if (_inputFactor != value)
                 {
-                    inputFactor = value;
+                    _inputFactor = value;
                     RaisePropertyChanged("InputFactor");
                 }
             }

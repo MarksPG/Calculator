@@ -27,7 +27,7 @@ namespace TextileCalculatorApp
         public MainPage()
         {
             this.InitializeComponent();
-            APIHelper.InitializeClient();
+            //APIHelper.InitializeClient();
             ContentFrame.Navigate(typeof(LoginRegisterPage));
         }
 
