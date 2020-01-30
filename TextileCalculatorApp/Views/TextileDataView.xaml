@@ -11,8 +11,9 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
-    <!--Loaded="{x:Bind TextileSelectionViewModel.LoadTextilesFromDatabase}">-->
 
+    
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -29,24 +30,19 @@
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="550"/>
+                <RowDefinition Height="750"/>
             </Grid.RowDefinitions>
             <TextBlock  Text="TYGKVALITETER"
+                        Style="{StaticResource InputDataTextBlock}"
                         Height="Auto"
                         Margin="10 10 10 10"
-                        FontFamily="Arial"
-                        FontSize="18"                        
                         Grid.Row="0"/>
-
-            <ListBox    Background="White"
-                        Margin="10 0 10 20"
-                        Height="Auto"
-                        Grid.Row="1"
-                        FontFamily="Arial"
-                        FontSize="18"
+            <ListBox    Style="{StaticResource TextileDataColumn}"
                         SelectedItem="{x:Bind TextileSelectionViewModel.SelectedTextile, Mode=TwoWay}"
                         ItemsSource="{x:Bind TextileSelectionViewModel.TextileDataCollection}"
-                        SelectedIndex="{x:Bind TextileSelectionViewModel.SelectedTextileIndex, Mode=TwoWay}">
+                        SelectedIndex="{x:Bind TextileSelectionViewModel.SelectedTextileIndex, Mode=TwoWay}"
+                        Height="Auto"
+                        Grid.Row="1">
                 <ListBox.ItemTemplate>
                     <DataTemplate x:DataType="models:Textile">
                         <TextBlock Text="{x:Bind Description}"/>
@@ -63,14 +59,10 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <TextBlock  Text="BREDDER"
+                        Style="{StaticResource InputDataTextBlock}"
                         Margin="10 10 10 10"
-                        FontFamily="Arial"
-                        FontSize="18"
                         Grid.Row="0"/>
-            <ListBox    Background="White"
-                        Margin="10 0 10 20"
-                        FontFamily="Arial"
-                        FontSize="18"
+            <ListBox    Style="{StaticResource TextileDataColumn}"
                         ItemsSource="{x:Bind TextileSelectionViewModel.Widths}"
                         SelectedItem="{x:Bind TextileSelectionViewModel.SelectedWidth, Mode=OneWay}"
                         SelectedIndex="{x:Bind TextileSelectionViewModel.SelectedWidthIndex, Mode=TwoWay}"
@@ -88,21 +80,17 @@
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="550"></RowDefinition>
+                <RowDefinition Height="750"></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock  Text="FÄRGER"
+                        Style="{StaticResource InputDataTextBlock}"
                         Margin="10 10 10 10"
-                        FontFamily="Arial"
-                        FontSize="18"
                         Grid.Row="0"/>
-            <ListBox    Background="White"
-                        Margin="10 0 10 20"
-                        FontFamily="Arial"
-                        FontSize="18"
-                        Grid.Row="1"
+            <ListBox    Style="{StaticResource TextileDataColumn}"
                         SelectedItem="{x:Bind TextileSelectionViewModel.SelectedTextile, Mode=OneWay}"
                         ItemsSource="{x:Bind TextileSelectionViewModel.Colours}"
-                        SelectedIndex="{x:Bind TextileSelectionViewModel.SelectedColourIndex, Mode=TwoWay}">
+                        SelectedIndex="{x:Bind TextileSelectionViewModel.SelectedColourIndex, Mode=TwoWay}"
+                        Grid.Row="1">
                 <ListBox.ItemTemplate>
                     <DataTemplate x:DataType="models:Colour">
                         <TextBlock Text="{x:Bind ColourName}"/>

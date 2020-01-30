@@ -21,8 +21,8 @@ namespace TextileCalculatorApp.ViewModel
             Colours = new ObservableCollection<Colour>();
             
             PopulateWidthAndColour(TextileDataCollection[SelectedTextileIndex]);
-            //SelectedWidthIndex = 0;
-            //SelectedColourIndex = 0;
+            SelectedWidthIndex = 0;
+            SelectedColourIndex = 0;
 
             //Instance = this;
             //TextilePictureViewModel = new TextilePictureViewModel();
@@ -183,7 +183,6 @@ namespace TextileCalculatorApp.ViewModel
                 if (_selectedColourIndex != value)
                 {
                     _selectedColourIndex = value;
-                    //TextilePictureViewModel.ShowCurrentColourPicture(SelectedTextileIndex, value);
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedColourIndex)));
                 }
             }
@@ -193,18 +192,20 @@ namespace TextileCalculatorApp.ViewModel
         {
             Widths.Clear();
             Colours.Clear();
+            
+            foreach (var colour in selectedTextile.Colours)
+            {
+                Colours.Add(colour);
+            }
+            SelectedColourIndex = 0;
 
             foreach (var width in selectedTextile.Widths)
             {
                 Widths.Add(width);
             }
-            //SelectedWidthIndex = 0;
+            SelectedWidthIndex = 0;
+            
 
-            foreach (var colour in selectedTextile.Colours)
-            {
-                Colours.Add(colour);
-            }
-            //SelectedColourIndex = 0;
 
 
         }

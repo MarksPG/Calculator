@@ -16,12 +16,6 @@
         <converters:ImageSourceConverter x:Key="StringToImageSource"/>
     </UserControl.Resources>
 
-    <!--<ItemsControl ItemsSource = "{x:Bind TextilePictureViewModel.TextilePictureCollection}">
-        <ItemsControl.ItemTemplate>
-            <DataTemplate x:DataType="ImageSource">
-            </DataTemplate>
-        </ItemsControl.ItemTemplate>
-    </ItemsControl>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -29,24 +23,17 @@
         </Grid.RowDefinitions>
 
         <TextBlock  Text="BESTÄLLNINGSVARA"
-        Grid.Row="0"
-        Margin="10 10 10 10"
-        FontFamily="Arial"
-        FontSize="18"
-        HorizontalAlignment="Center"/>
+                    Style="{StaticResource InputDataTextBlock}"
+                    Grid.Row="0"
+                    Margin="10 10 10 10"/>
 
-        <Image  Source="{x:Bind TextilePictureViewModel.Picture, Converter={StaticResource StringToImageSource}}"
-        Grid.Row="1"
-        Height="200"
-        Width="200"
-        Margin="10 10 10 10"
-        HorizontalAlignment="Center">
-
-                        
-
+        <Image      Source="{x:Bind TextilePictureViewModel.Picture, Converter={StaticResource StringToImageSource}, Mode=OneWay}"
+                    Grid.Row="1"
+                    Height="200"
+                    Width="200"
+                    Margin="10 10 10 10"
+                    HorizontalAlignment="Center">
         </Image>
     </Grid>
-
-
 
 </UserControl>

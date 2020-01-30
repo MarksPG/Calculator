@@ -6,12 +6,30 @@ namespace TextileCalculatorApp.ViewModel
 {
     public class InputDataViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<InputData> InputDataCollection;
+
+        private ObservableCollection<InputData> _inputDataCollection = null;
+        public ObservableCollection<InputData> InputDataCollection
+        {
+            get { return _inputDataCollection; }
+            set
+            {
+                if (_inputDataCollection != value)
+                {
+                    _inputDataCollection = value;
+
+                    if (this.PropertyChanged != null)
+                    {
+                        this.PropertyChanged(this, new PropertyChangedEventArgs("InputDataCollection"));
+                    }
+                }
+            }
+        }
 
         public InputDataViewModel()
         {
             LoadDefaultInput();
         }
+
 
         public void LoadDefaultInput()
         {

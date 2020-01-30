@@ -10,10 +10,10 @@ namespace TextileCalculatorApp.DTO
     class CustomerSelectedData
     {
         [JsonProperty("inputLength")]
-        public int InputLength { get; set; }
+        public string InputLength { get; set; }
 
         [JsonProperty("inputNumber")]
-        public int InputNumber { get; set; }
+        public string InputNumber { get; set; }
 
         [JsonProperty("selectedSuspension")]
         public string SelectedSuspension { get; set; }
@@ -28,6 +28,6 @@ namespace TextileCalculatorApp.DTO
         public int SelectedWidthId { get; set; }
 
         [JsonProperty("inputFactor")]
-        public double InputFactor { get; set; }
+        public string InputFactor { get; set; }
     }
 }

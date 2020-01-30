@@ -133,10 +133,12 @@
     <Compile Include="CalculatePage.xaml.cs">
       <DependentUpon>CalculatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\DoubleToPriceStringConverter.cs" />
     <Compile Include="Converters\ImageSourceConverter.cs" />
     <Compile Include="Model\PictureDataModel.cs" />
     <Compile Include="Model\TextileDataModel.cs" />
     <Compile Include="ViewModel\CalculateViewModel.cs" />
+    <Compile Include="ViewModel\OutputDataViewModel.cs" />
     <Compile Include="ViewModel\TextilePictureViewModel.cs" />
     <Compile Include="ViewModel\TextileSelectionViewModel.cs" />
     <Compile Include="Views\InputDataView.xaml.cs">
@@ -170,6 +172,9 @@
     </Compile>
     <Compile Include="Views\PictureDataView.xaml.cs">
       <DependentUpon>PictureDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PriceOutputView.xaml.cs">
+      <DependentUpon>PriceOutputView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TextileDataView.xaml.cs">
       <DependentUpon>TextileDataView.xaml</DependentUpon>
@@ -231,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PictureDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PriceOutputView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

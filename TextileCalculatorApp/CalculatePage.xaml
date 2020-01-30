@@ -20,13 +20,13 @@
         </Grid.RowDefinitions>
 
         <views:TextileDataView x:Name="TextileViewControl" 
-                                         
-                                         Grid.Column="0"
-                                         Grid.Row="0"
-                                         HorizontalAlignment="Center"/>
+                               TextileSelectionViewModel="{x:Bind CalculateViewModel.TextileSelectionViewModel}"      
+                               Grid.Column="0"
+                               Grid.Row="0"
+                               HorizontalAlignment="Center"/>
          
         <!-- CALCULATION -->
-        <Grid Grid.Column="3">
+        <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -35,78 +35,31 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            
             <views:PictureDataView
                         Grid.ColumnSpan="2"
                         Grid.Row="0"
                         Grid.Column="0"
                         HorizontalAlignment="Center"
-                        TextilePictureViewModel="{x:Bind CalculateViewModel.TextilePictureViewModel, Mode=OneWay}"
-                    />
-            <!--<TextBlock  Text="BESTÄLLNINGSVARA"
-                        Grid.ColumnSpan="2"
-                        Grid.Column="0"
-                        Grid.Row="0"
-                        Margin="10 10 10 10"
-                        FontFamily="Arial"
-                        FontSize="18"
-                        HorizontalAlignment="Center"/>
-            <Image      x:Name="currentPicture"
-                        Grid.ColumnSpan="2"
-                        Grid.Column="0"
-                        Grid.Row="1"
-                        Height="200"
-                        Width="200"
-                        Margin="10 10 10 10"
-                        HorizontalAlignment="Center"/>-->
-            
+                        TextilePictureViewModel="{x:Bind CalculateViewModel.TextilePictureViewModel, Mode=OneWay}"/>
+                        
             <views:InputDataView 
                         Grid.ColumnSpan="2"
                         Grid.Column="0"
-                        Grid.Row="2"
-                        HorizontalAlignment="Center"/>
-                                         
+                        Grid.Row="1"
+                        Margin="0 50 0 0"
+                        HorizontalAlignment="Center"
+                        InputDataViewModel="{x:Bind CalculateViewModel.InputDataViewModel, Mode=OneWay}"/>
             
-            <Button     Name="Calculate"
+            <views:PriceOutputView
                         Grid.ColumnSpan="2"
                         Grid.Column="0"
-                        Grid.Row="3"
-                        Margin="0 10"
-                        Height ="Auto"
-                        Width="Auto"
-                        FontSize="18"
-                        FontFamily="Arial"
-                        HorizontalAlignment="Center">Beräkna pris</Button>
-
-            <TextBlock  Grid.Column="0"
-                        Grid.Row="4"
+                        Grid.Row="2"
+                        Margin="0 50 0 0"
                         HorizontalAlignment="Center"
-                        FontFamily="Arial"
-                        Margin="0 10"
-                        FontSize="18">Ditt inköpspris</TextBlock>
-            <TextBlock  x:Name="RetailPrice"
-                        Grid.Column="0"
-                        Grid.Row="5"
-                        HorizontalAlignment="Center"
-                        FontWeight="ExtraBold"
-                        FontSize="20"/>
-            <TextBlock  Grid.Column="1"
-                        Grid.Row="4"
-                        Margin="0 10"
-                        HorizontalAlignment="Center"
-                        FontFamily="Arial"
-                        FontSize="18">Kundens pris</TextBlock>
-            <TextBlock x:Name="CustomerPrice"
-                        Grid.Column="1"
-                        Grid.Row="5"
-                        HorizontalAlignment="Center"
-                        Margin="10 0 10 0"
-                        Foreground="Green"
-                        FontWeight="ExtraBold"
-                        FontSize="20"/>
+                        OutputDataViewModel="{x:Bind CalculateViewModel.OutputDataViewModel, Mode=OneWay}"                                />
+             
         </Grid>
     </Grid>
 </Page>

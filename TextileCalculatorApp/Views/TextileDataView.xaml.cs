@@ -8,20 +8,11 @@ namespace TextileCalculatorApp.Views
     {
         public TextileSelectionViewModel TextileSelectionViewModel { get; set; }
 
-        
 
         public TextileDataView()
         {
             this.InitializeComponent();
-            TextileSelectionViewModel = new TextileSelectionViewModel();
-            
         }
 
-        
-
-        //private void TextileChanged(object sender, SelectionChangedEventArgs e)
-        //{
-
-        //}
     }
 }

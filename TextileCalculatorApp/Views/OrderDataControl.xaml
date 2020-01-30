@@ -9,11 +9,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <UserControl.Resources>
-        <Style x:Key="LocalTextBox" TargetType="TextBox" BasedOn="{StaticResource CoolTextBox}">
-            <Setter Property="Foreground" Value="Red"/>
-        </Style>
-    </UserControl.Resources>
+    
 
     <!--<ItemsControl Name="orderItemsControl">
         <ItemsControl.ItemsPanel>
@@ -38,7 +34,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Style="{StaticResource }" Grid.Column="0">ItemNr</TextBlock>
+        <TextBlock Grid.Column="0">ItemNr</TextBlock>
         <TextBlock Grid.Column="1">Description</TextBlock>
         <TextBlock Grid.Column="2">ColourName</TextBlock>
         <TextBlock Grid.Column="3">Width</TextBlock>
