@@ -1,22 +1,21 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-
-
+﻿using System.ComponentModel;
+using System.Threading.Tasks;
+using TextileCalculatorApp.DataProvider;
 
 namespace TextileCalculatorApp.ViewModel
 {
     public class OutputDataViewModel : INotifyPropertyChanged
     {
 
-        private ObservableCollection<DTO.CalculatedPrice> _result;
+        private DTO.CalculatedPrice _result;
 
-        public ObservableCollection<DTO.CalculatedPrice> Result
+        public DTO.CalculatedPrice Result
         {
             get => _result;
             set
             {
                 _result = value;
-                PropertyChanged?.Invoke(this, nameof("Result"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Result)));
             }
         }
 
@@ -29,13 +28,25 @@ namespace TextileCalculatorApp.ViewModel
 
         public void LoadDefaultOutput()
         {
-            ObservableCollection<DTO.CalculatedPrice> outputDataCollection = new ObservableCollection<DTO.CalculatedPrice>
+            DTO.CalculatedPrice outputDataCollection = new DTO.CalculatedPrice
             {
-                new DTO.CalculatedPrice { CustomerPrice = 2500, RetailerCost = 1000 }
+                CustomerPrice = 2500, RetailerCost = 1000    
             };
 
             Result = outputDataCollection;
         }
+
+        public void GetCalculatedPriceObject(DTO.CustomerSelectedData csd)
+        {
+            TextileDataProvider tdp = new TextileDataProvider();
+
+            Task<DTO.CalculatedPrice> data = Task.Run<DTO.CalculatedPrice>(async () => await tdp.SendDataForCalculationAsync(csd));
+            var output = data.Result;
+
+            Result = output;
+
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

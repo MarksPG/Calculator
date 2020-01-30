@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TextileCalculatorApp.DataProvider;
-using TextileCalculatorApp.Models;
+
+
 
 namespace TextileCalculatorApp.ViewModel
 {
@@ -37,28 +33,28 @@ namespace TextileCalculatorApp.ViewModel
         {
             if (e.PropertyName is "CalculateButtonClick")
             {
-                var calculationBasis = GetCalculationBasis();
+                GetCalculationBasis();
             }
 
         }
 
-        private DTO.CustomerSelectedData GetCalculationBasis()
+        private void GetCalculationBasis()
         {
-            
+
             DTO.CustomerSelectedData csd = new DTO.CustomerSelectedData()
             {
-                InputLength = InputDataViewModel.InputDataCollection[0].InputLength,
-                InputNumber = InputDataViewModel.InputDataCollection[0].InputNumber,
-                InputFactor = InputDataViewModel.InputDataCollection[0].InputFactor,
+                InputLength = Int32.Parse(InputDataViewModel.InputDataCollection[0].InputLength),
+                InputNumber = Int32.Parse(InputDataViewModel.InputDataCollection[0].InputNumber),
+                InputFactor = Double.Parse((InputDataViewModel.InputDataCollection[0].InputFactor).Replace(",", ".").Replace(" ", "")),
                 SelectedSuspension = InputDataViewModel.InputDataCollection[0].SelectedSuspension,
                 SelectedTextileId = TextileSelectionViewModel.TextileDataCollection[TextileSelectionViewModel.SelectedTextileIndex].Id,
                 SelectedColourId = TextileSelectionViewModel.Colours[TextileSelectionViewModel.SelectedColourIndex].Id,
                 SelectedWidthId = TextileSelectionViewModel.Widths[TextileSelectionViewModel.SelectedWidthIndex].Id,
             };
 
-            return csd;
-
+            OutputDataViewModel.GetCalculatedPriceObject(csd);
         }
+
 
         private void OnTextileColourIndexChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {

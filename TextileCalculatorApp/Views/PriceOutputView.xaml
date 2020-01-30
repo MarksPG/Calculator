@@ -14,7 +14,7 @@
         <converters:DoubleToPriceStringConverter x:Key="DoubleToPriceString"/>
     </UserControl.Resources>
 
-    <ItemsControl ItemsSource = "{x:Bind OutputDataViewModel.OutputDataCollection}">
+    <ItemsControl ItemsSource = "{x:Bind OutputDataViewModel.Result}">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
                 <Grid>
@@ -29,7 +29,7 @@
                     </Grid.RowDefinitions>
 
                     <Button  x:Name="Calculate"
-                        Click="{x:Bind CalculateButtonClick}"
+                        Content="Beräkna pris"
                         Grid.ColumnSpan="2"
                         Grid.Column="0"
                         Grid.Row="0"
@@ -38,7 +38,7 @@
                         Width="Auto"
                         FontSize="18"
                         FontFamily="Arial"
-                        HorizontalAlignment="Center">Beräkna pris</Button>
+                        HorizontalAlignment="Center"/> 
 
                     <TextBlock  Text="Ditt inköpspris"
                         Style="{StaticResource InputDataTextBlock}"
@@ -46,7 +46,7 @@
                         Grid.Column="0"
                         Grid.Row="1"/>
 
-                    <TextBlock  Text="{Binding Path = RetailerCost, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"
+                    <TextBlock  Text="{Binding Path = RetailerPrice, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"
                         Grid.Column="0"
                         Grid.Row="2"
                         HorizontalAlignment="Center"

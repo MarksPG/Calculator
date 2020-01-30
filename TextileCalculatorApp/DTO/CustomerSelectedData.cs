@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace TextileCalculatorApp.DTO
 {
-    class CustomerSelectedData
+    public class CustomerSelectedData
     {
         [JsonProperty("inputLength")]
-        public string InputLength { get; set; }
+        public int InputLength { get; set; }
 
         [JsonProperty("inputNumber")]
-        public string InputNumber { get; set; }
+        public int InputNumber { get; set; }
 
         [JsonProperty("selectedSuspension")]
         public string SelectedSuspension { get; set; }
@@ -28,6 +28,6 @@ namespace TextileCalculatorApp.DTO
         public int SelectedWidthId { get; set; }
 
         [JsonProperty("inputFactor")]
-        public string InputFactor { get; set; }
+        public double InputFactor { get; set; }
     }
 }
