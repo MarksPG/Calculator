@@ -7,19 +7,19 @@ namespace TextileCalculatorApp.ViewModel
     public class InputDataViewModel : INotifyPropertyChanged
     {
 
-        private ObservableCollection<InputData> _inputDataCollection = null;
-        public ObservableCollection<InputData> InputDataCollection
+        private InputData _inputData = null;
+        public InputData InputData
         {
-            get { return _inputDataCollection; }
+            get { return _inputData; }
             set
             {
-                if (_inputDataCollection != value)
+                if (_inputData != value)
                 {
-                    _inputDataCollection = value;
+                    _inputData = value;
 
                     if (this.PropertyChanged != null)
                     {
-                        this.PropertyChanged(this, new PropertyChangedEventArgs("InputDataCollection"));
+                        this.PropertyChanged(this, new PropertyChangedEventArgs("InputData"));
                     }
                 }
             }
@@ -33,12 +33,9 @@ namespace TextileCalculatorApp.ViewModel
 
         public void LoadDefaultInput()
         {
-            ObservableCollection<InputData> inputDataCollection = new ObservableCollection<InputData>
-            {
-                new InputData { InputLength = "240", InputNumber = "1", SelectedSuspension = "Wave", InputFactor = "2.5" }
-            };
+            var inputData = new InputData { InputLength = "240", InputNumber = "1", SelectedSuspension = "Wave", InputFactor = "2.5" };
 
-            InputDataCollection = inputDataCollection;
+            InputData = inputData;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

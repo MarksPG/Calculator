@@ -50,16 +50,19 @@
                         Grid.Row="1"
                         Margin="0 50 0 0"
                         HorizontalAlignment="Center"
-                        InputDataViewModel="{x:Bind CalculateViewModel.InputDataViewModel, Mode=OneWay}"/>
-            
+                        InputDataViewModel="{x:Bind CalculateViewModel.InputDataViewModel}"/>
+
             <views:PriceOutputView
                         Grid.ColumnSpan="2"
                         Grid.Column="0"
                         Grid.Row="2"
                         Margin="0 50 0 0"
                         HorizontalAlignment="Center"
-                        OutputDataViewModel="{x:Bind CalculateViewModel.OutputDataViewModel, Mode=OneWay}"                                />
-             
+                        OutputDataViewModel="{x:Bind CalculateViewModel.OutputDataViewModel}"
+                        Click="{x:Bind CalculateViewModel.GetCalculationBasis}">
+
+            </views:PriceOutputView>
+
         </Grid>
     </Grid>
 </Page>

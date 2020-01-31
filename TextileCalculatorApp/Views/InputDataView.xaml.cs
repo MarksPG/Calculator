@@ -13,7 +13,6 @@ namespace TextileCalculatorApp.Views
         public InputDataView()
         {
             this.InitializeComponent();
-            InputDataViewModel = new InputDataViewModel();
         }
                 
     }

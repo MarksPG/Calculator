@@ -6,6 +6,7 @@ namespace TextileCalculatorApp.ViewModel
 {
     public class OutputDataViewModel : INotifyPropertyChanged
     {
+        public CalculateViewModel Root { get; set; } // Reference to calculate view model
 
         private DTO.CalculatedPrice _result;
 
@@ -28,10 +29,7 @@ namespace TextileCalculatorApp.ViewModel
 
         public void LoadDefaultOutput()
         {
-            DTO.CalculatedPrice outputDataCollection = new DTO.CalculatedPrice
-            {
-                CustomerPrice = 2500, RetailerCost = 1000    
-            };
+            DTO.CalculatedPrice outputDataCollection = new DTO.CalculatedPrice();
 
             Result = outputDataCollection;
         }
@@ -46,7 +44,6 @@ namespace TextileCalculatorApp.ViewModel
             Result = output;
 
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

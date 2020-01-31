@@ -14,9 +14,9 @@
         <converters:DoubleToPriceStringConverter x:Key="DoubleToPriceString"/>
     </UserControl.Resources>
 
-    <ItemsControl ItemsSource = "{x:Bind OutputDataViewModel.Result}">
+    <!--<ItemsControl ItemsSource = "{x:Bind OutputDataViewModel.Result}">
         <ItemsControl.ItemTemplate>
-            <DataTemplate>
+            <DataTemplate>-->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -28,7 +28,7 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <Button  x:Name="Calculate"
+                    <Button x:Name="CalculateButton"
                         Content="Beräkna pris"
                         Grid.ColumnSpan="2"
                         Grid.Column="0"
@@ -46,7 +46,7 @@
                         Grid.Column="0"
                         Grid.Row="1"/>
 
-                    <TextBlock  Text="{Binding Path = RetailerPrice, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"
+                    <TextBlock  Text="{x:Bind OutputDataViewModel.Result.RetailerCost, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"
                         Grid.Column="0"
                         Grid.Row="2"
                         HorizontalAlignment="Center"
@@ -61,7 +61,7 @@
                         Grid.Column="1"
                         Grid.Row="1"/>
 
-                    <TextBlock Text="{Binding Path = CustomerPrice, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"  
+                    <TextBlock Text="{x:Bind OutputDataViewModel.Result.CustomerPrice, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"  
                         Grid.Column="1"
                         Grid.Row="2"
                         HorizontalAlignment="Center"
@@ -70,7 +70,7 @@
                         FontWeight="ExtraBold"
                         FontSize="20"/>
                 </Grid>
-            </DataTemplate>
+            <!--</DataTemplate>
         </ItemsControl.ItemTemplate>
-    </ItemsControl>
+    </ItemsControl>-->
 </UserControl>

@@ -23,7 +23,7 @@ namespace TextileCalculatorApp.ViewModel
             InputDataViewModel = new InputDataViewModel();
             TextileSelectionViewModel = new TextileSelectionViewModel();
             TextilePictureViewModel = new TextilePictureViewModel();
-            OutputDataViewModel = new OutputDataViewModel();
+            OutputDataViewModel = new OutputDataViewModel { Root = this };
             TextileSelectionViewModel.PropertyChanged += OnTextileColourIndexChanged;
             OutputDataViewModel.PropertyChanged += OnCalculatePriceButtonClick;
               
@@ -38,15 +38,15 @@ namespace TextileCalculatorApp.ViewModel
 
         }
 
-        private void GetCalculationBasis()
+        public void GetCalculationBasis()
         {
 
             DTO.CustomerSelectedData csd = new DTO.CustomerSelectedData()
             {
-                InputLength = Int32.Parse(InputDataViewModel.InputDataCollection[0].InputLength),
-                InputNumber = Int32.Parse(InputDataViewModel.InputDataCollection[0].InputNumber),
-                InputFactor = Double.Parse((InputDataViewModel.InputDataCollection[0].InputFactor).Replace(",", ".").Replace(" ", "")),
-                SelectedSuspension = InputDataViewModel.InputDataCollection[0].SelectedSuspension,
+                InputLength = Int32.Parse(InputDataViewModel.InputData.InputLength),
+                InputNumber = Int32.Parse(InputDataViewModel.InputData.InputNumber),
+                InputFactor = Double.Parse((InputDataViewModel.InputData.InputFactor).Replace(",", ".").Replace(" ", "")),
+                SelectedSuspension = InputDataViewModel.InputData.SelectedSuspension,
                 SelectedTextileId = TextileSelectionViewModel.TextileDataCollection[TextileSelectionViewModel.SelectedTextileIndex].Id,
                 SelectedColourId = TextileSelectionViewModel.Colours[TextileSelectionViewModel.SelectedColourIndex].Id,
                 SelectedWidthId = TextileSelectionViewModel.Widths[TextileSelectionViewModel.SelectedWidthIndex].Id,
