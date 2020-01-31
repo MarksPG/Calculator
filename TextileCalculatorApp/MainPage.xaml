@@ -9,7 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <!--<SolidColorBrush x:Key="NavigationViewItemBackgroundPointerOver" Color="#FFFFCA03"/>-->
         <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="White"/>
     </Page.Resources>
 

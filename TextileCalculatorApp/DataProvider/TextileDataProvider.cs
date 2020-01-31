@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Formatting;
-using System.Text;
 using System.Threading.Tasks;
 using TextileCalculatorApp.Models;
 
@@ -73,13 +70,14 @@ namespace TextileCalculatorApp.DataProvider
 
         public string GetPictureURL(Textile chosenTextile, Colour chosenColour)
         {
+
             string baseUrl = "https://www.winterstextil.se/wp-content/uploads/";
             string textileUrl = chosenTextile.ImageString;
             string selectedUrl = $"{chosenTextile.ItemNumber}-{chosenColour.ColourCode}.jpg";
 
-
             string Url = baseUrl + textileUrl + selectedUrl;
             return Url;
+
         }
 
     }

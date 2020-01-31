@@ -10,8 +10,6 @@ namespace TextileCalculatorApp
     {
         public CalculateViewModel CalculateViewModel { get; set; }
 
-
-
         public CalculatePage()
         {
             this.InitializeComponent();

@@ -14,21 +14,19 @@
         <converters:DoubleToPriceStringConverter x:Key="DoubleToPriceString"/>
     </UserControl.Resources>
 
-    <!--<ItemsControl ItemsSource = "{x:Bind OutputDataViewModel.Result}">
-        <ItemsControl.ItemTemplate>
-            <DataTemplate>-->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
 
-                    <Button x:Name="CalculateButton"
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CalculateButton"
                         Content="Beräkna pris"
                         Grid.ColumnSpan="2"
                         Grid.Column="0"
@@ -38,15 +36,15 @@
                         Width="Auto"
                         FontSize="18"
                         FontFamily="Arial"
-                        HorizontalAlignment="Center"/> 
+                        HorizontalAlignment="Center"/>
 
-                    <TextBlock  Text="Ditt inköpspris"
+        <TextBlock  Text="Ditt inköpspris"
                         Style="{StaticResource InputDataTextBlock}"
                         Margin="10 0 25 0"
                         Grid.Column="0"
                         Grid.Row="1"/>
 
-                    <TextBlock  Text="{x:Bind OutputDataViewModel.Result.RetailerCost, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"
+        <TextBlock  Text="{x:Bind OutputDataViewModel.Result.RetailerCost, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"
                         Grid.Column="0"
                         Grid.Row="2"
                         HorizontalAlignment="Center"
@@ -55,13 +53,13 @@
                         FontWeight="ExtraBold"
                         FontSize="20"/>
 
-                    <TextBlock  Text="Kundens pris"
+        <TextBlock  Text="Kundens pris"
                         Style="{StaticResource InputDataTextBlock}"
                         Margin="25 0 10 0"
                         Grid.Column="1"
                         Grid.Row="1"/>
 
-                    <TextBlock Text="{x:Bind OutputDataViewModel.Result.CustomerPrice, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"  
+        <TextBlock Text="{x:Bind OutputDataViewModel.Result.CustomerPrice, Converter={StaticResource DoubleToPriceString}, Mode=OneWay}"  
                         Grid.Column="1"
                         Grid.Row="2"
                         HorizontalAlignment="Center"
@@ -69,8 +67,6 @@
                         Foreground="Green"
                         FontWeight="ExtraBold"
                         FontSize="20"/>
-                </Grid>
-            <!--</DataTemplate>
-        </ItemsControl.ItemTemplate>
-    </ItemsControl>-->
+    </Grid>
+
 </UserControl>

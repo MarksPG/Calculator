@@ -9,9 +9,6 @@ namespace TextileCalculatorApp.ViewModel
 {
     public class TextileSelectionViewModel : INotifyPropertyChanged
     {
-        //public static TextileSelectionViewModel Instance { get; private set; }
-
-        //public TextilePictureViewModel TextilePictureViewModel { get; set; }
 
         public TextileSelectionViewModel()
         {
@@ -24,12 +21,11 @@ namespace TextileCalculatorApp.ViewModel
             SelectedWidthIndex = 0;
             SelectedColourIndex = 0;
 
-            //Instance = this;
-            //TextilePictureViewModel = new TextilePictureViewModel();
         }
 
 
         private ObservableCollection<Textile> _textileDataCollection = null;
+
         public ObservableCollection<Textile> TextileDataCollection
         {
             get { return _textileDataCollection; }
@@ -205,12 +201,7 @@ namespace TextileCalculatorApp.ViewModel
             }
             SelectedWidthIndex = 0;
             
-
-
-
         }
-
-        
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

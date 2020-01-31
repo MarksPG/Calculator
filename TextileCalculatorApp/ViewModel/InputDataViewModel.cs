@@ -1,5 +1,4 @@
 ﻿using TextileCalculatorApp.Model;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace TextileCalculatorApp.ViewModel
